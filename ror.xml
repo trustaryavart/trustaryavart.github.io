@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://aryavarttrust.in/</title>
+  <link>https://aryavarttrust.in/</link>
+
+<item>
+     <link>https://aryavarttrust.in/</link>
+     <title>Aryavarta Siddhanta Sanrakshaka Trust</title>
+     <description>Aryavarta Siddhanta Sanrakshaka Trust promotes Sanatan Vedic knowledge, spirituality, social welfare, and ancient Indian traditions through education and outreach.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://aryavarttrust.in/index.html</link>
+     <title>Aryavarta Siddhanta Sanrakshaka Trust</title>
+     <description>Aryavarta Siddhanta Sanrakshaka Trust promotes Sanatan Vedic knowledge, spirituality, social welfare, and ancient Indian traditions through education and outreach.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://aryavarttrust.in/library.html</link>
+     <title>Aryavarta Siddhanta Sanrakshaka Trust</title>
+     <description>Access, download and read free e‑books on Sanskrit, Vedic texts and Indian philosophy. Browse our curated library of Upanishads, Yogashastra, Smritis and more—all in PDF format for on‑site reading or offline download.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  
