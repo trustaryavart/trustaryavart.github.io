@@ -281,6 +281,292 @@
 					</div>
 				</div>
 			</div>
+			<!-- ===== ONGOING SESSIONS SECTION ===== -->
+			<div id="fh5co-ongoing-sessions">
+				<style>
+					#fh5co-ongoing-sessions {
+						padding: 5em 3em;
+						clear: both;
+						background: #fffdf9;
+						border-top: 3px solid #EE7805;
+						border-bottom: 3px solid #EE7805;
+					}
+
+					@media screen and (max-width: 768px) {
+						#fh5co-ongoing-sessions {
+							padding: 3em 1em;
+						}
+					}
+
+					#fh5co-ongoing-sessions .fh5co-heading h2 {
+						position: relative;
+						display: inline-block;
+						font-family: "Libre Baskerville", serif;
+						color: #000;
+					}
+
+					#fh5co-ongoing-sessions .fh5co-heading h2::after {
+						content: '';
+						display: block;
+						width: 60px;
+						height: 3px;
+						background: #EE7805;
+						margin: 10px auto 0;
+						border-radius: 2px;
+					}
+
+					#fh5co-ongoing-sessions .fh5co-heading .badge-live {
+						display: inline-block;
+						background: #EE7805;
+						color: #fff;
+						font-family: "Source Sans Pro", sans-serif;
+						font-size: 11px;
+						font-weight: 700;
+						letter-spacing: 2px;
+						text-transform: uppercase;
+						padding: 4px 12px;
+						border-radius: 50px;
+						margin-bottom: 14px;
+						animation: pulseBadge 2s infinite;
+					}
+
+					@keyframes pulseBadge {
+
+						0%,
+						100% {
+							box-shadow: 0 0 0 0 rgba(238, 120, 5, 0.5);
+						}
+
+						50% {
+							box-shadow: 0 0 0 8px rgba(238, 120, 5, 0);
+						}
+					}
+
+					/* Card wrapper */
+					.ongoing-card-wrap {
+						display: flex;
+						gap: 2em;
+						justify-content: center;
+						flex-wrap: wrap;
+						margin-top: 2em;
+					}
+
+					/* Individual card */
+					.ongoing-card {
+						flex: 1 1 300px;
+						max-width: 440px;
+						background: #fff;
+						border-radius: 10px;
+						overflow: hidden;
+						box-shadow: 0 6px 30px rgba(0, 0, 0, 0.10);
+						transition: transform 0.35s ease, box-shadow 0.35s ease;
+						position: relative;
+					}
+
+					.ongoing-card:hover {
+						transform: translateY(-6px);
+						box-shadow: 0 16px 40px rgba(238, 120, 5, 0.22);
+					}
+
+					/* Image area */
+					.ongoing-card .card-img-wrap {
+						overflow: hidden;
+						position: relative;
+						height: 240px;
+					}
+
+					.ongoing-card .card-img-wrap img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+					}
+
+					.ongoing-card:hover .card-img-wrap img {
+						transform: scale(1.08);
+					}
+
+					/* Warm gradient overlay on image */
+					.ongoing-card .card-img-wrap::after {
+						content: '';
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						height: 55%;
+						background: linear-gradient(to top, rgba(30, 15, 0, 0.55), transparent);
+						pointer-events: none;
+					}
+
+					/* Ribbon badge top-right */
+					.ongoing-card .card-ribbon {
+						position: absolute;
+						top: 14px;
+						right: -1px;
+						background: #EE7805;
+						color: #fff;
+						font-family: "Source Sans Pro", sans-serif;
+						font-size: 11px;
+						font-weight: 700;
+						letter-spacing: 1.5px;
+						text-transform: uppercase;
+						padding: 5px 14px;
+						border-radius: 3px 0 0 3px;
+						box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.18);
+						z-index: 2;
+					}
+
+					/* Card body */
+					.ongoing-card .card-body {
+						padding: 1.4em 1.6em 1.6em;
+						border-top: 3px solid #EE7805;
+					}
+
+					.ongoing-card .card-body h3 {
+						font-family: "Libre Baskerville", serif;
+						font-size: 20px;
+						color: #000;
+						margin: 0 0 8px;
+					}
+
+					.ongoing-card .card-body p {
+						font-family: "Source Sans Pro", sans-serif;
+						font-size: 14px;
+						color: #666;
+						margin: 0 0 16px;
+						line-height: 1.6;
+					}
+
+					.ongoing-card .card-body .card-link {
+						display: inline-block;
+						font-family: "Source Sans Pro", sans-serif;
+						font-size: 13px;
+						font-weight: 700;
+						color: #EE7805;
+						text-transform: uppercase;
+						letter-spacing: 1.5px;
+						text-decoration: none;
+						border-bottom: 2px solid transparent;
+						transition: border-color 0.3s, color 0.3s;
+					}
+
+					.ongoing-card .card-body .card-link:hover {
+						color: #c95f00;
+						border-bottom-color: #EE7805;
+					}
+
+					.ongoing-card .card-body .card-link i {
+						margin-left: 5px;
+						font-size: 12px;
+					}
+
+					/* Meta info list inside card */
+					.card-meta-list {
+						list-style: none;
+						margin: 0 0 16px 0;
+						padding: 0;
+						border-top: 1px solid #f0e8dd;
+						padding-top: 12px;
+					}
+
+					.card-meta-list li {
+						display: flex;
+						align-items: center;
+						gap: 8px;
+						font-family: "Source Sans Pro", sans-serif;
+						font-size: 13px;
+						color: #555;
+						padding: 5px 0;
+						border-bottom: 1px solid #f7f0e8;
+					}
+
+					.card-meta-list li:last-child {
+						border-bottom: none;
+					}
+
+					.card-meta-list li i {
+						color: #EE7805;
+						font-size: 14px;
+						min-width: 16px;
+						text-align: center;
+					}
+
+					.card-meta-list li strong {
+						color: #333;
+						font-weight: 700;
+					}
+
+					.card-meta-list li a {
+						color: #EE7805;
+						text-decoration: none;
+						font-weight: 600;
+						transition: color 0.2s;
+					}
+
+					.card-meta-list li a:hover {
+						color: #c95f00;
+					}
+				</style>
+
+				<div class="row animate-box">
+					<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+						<span class="badge-live">● Now Active</span>
+						<h2>Ongoing Sessions</h2>
+					</div>
+				</div>
+
+				<div class="ongoing-card-wrap animate-box">
+
+					<!-- Card 1: Sanskrit Bodh -->
+					<div class="ongoing-card">
+						<div class="card-img-wrap">
+							<img src="sanskrit_bodh.jpeg" alt="Sanskrit Bodh Session">
+						</div>
+						<span class="card-ribbon">Sanskrit</span>
+						<div class="card-body">
+							<h3>Sanskrit Bodh — Online Learning Program</h3>
+							<p>Speak, read, understand Sanskrit &amp; recite Shlokas. Online classes by Aryavart
+								Siddhanta Sanrakshaka Trust.</p>
+							<ul class="card-meta-list">
+								<li><i class="icon-calendar2"></i> <strong>Schedule:</strong> Monday – Saturday</li>
+								<li><i class="icon-clock2"></i> <strong>Time:</strong> 4:30 PM</li>
+								<li><i class="icon-phone3"></i> <strong>Contact:</strong> <a
+										href="tel:9532815090">9532815090</a></li>
+								<li><i class="icon-globe"></i> <strong>Website:</strong> <a
+										href="https://aryavarttrust.in" target="_blank">aryavarttrust.in</a></li>
+							</ul>
+							<a href="tel:9532815090" class="card-link"><a href="tel:9532815090">Join Session </a><i
+									class="icon-arrow-right3"></i></a>
+						</div>
+					</div>
+
+					<!-- Card 2: Aarogya -->
+					<div class="ongoing-card">
+						<div class="card-img-wrap">
+							<img src="Aarogya.jpeg" alt="Aarogya Yoga Session">
+						</div>
+						<span class="card-ribbon">Aarogya</span>
+						<div class="card-body">
+							<h3>Yog for Arogya — Practice Online, Stay Healthy</h3>
+							<p>Authentic Vedic Yoga for all age groups — for physical &amp; mental well-being. Guided by
+								Yog Guru Ritesh Dubey. Online mode.</p>
+							<ul class="card-meta-list">
+								<li><i class="icon-clock2"></i> <strong>Timing:</strong> Morning 7:00 AM – 7:45 AM</li>
+								<li><i class="icon-tag"></i> <strong>Fees:</strong> ₹599 / month only</li>
+								<li><i class="icon-phone3"></i> <strong>Contact:</strong> <a
+										href="tel:+919532815090">+91 95328 15090</a></li>
+								<li><i class="icon-globe"></i> <strong>Website:</strong> <a
+										href="https://aryavarttrust.in" target="_blank">aryavarttrust.in</a></li>
+							</ul>
+							<a href="tel:+919532815090" class="card-link"><a href="tel:9532815090">Join Session </a><i
+									class="icon-arrow-right3"></i></a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- ===== END ONGOING SESSIONS ===== -->
+
 			<div id="fh5co-events">
 				<div class="row animate-box">
 					<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
